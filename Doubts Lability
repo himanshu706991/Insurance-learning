@@ -1,0 +1,79 @@
+Questions You Need to Ask Stakeholders
+What fields define a settled vs. trial claim?
+
+What field defines payout amount?
+
+Can we get a standard template for PDF documents or any tool currently used to extract data from them?
+
+What ImageRight metadata is available for mapping documents to claims?
+
+Are the LexisNexis or Verdict Analyzer data feeds integrated?
+
+Can we receive some sample documents with label mapping for training?
+
+What is the development environment (Jupyter, GCP, APIs)?
+
+What are the data retention and labeling policies?
+
+✅ Final Thoughts
+You’re thinking like a full-stack ML engineer: from data ingestion to deployment.
+
+Your primary blockers are:
+
+Unstructured data extraction
+
+Inconsistent document formats
+
+Unclear output expectations from stakeholders
+
+We can solve this by first:
+
+Finalizing what fields are required
+
+Getting sample structured and unstructured data
+
+Creating a data mapping sheet
+
+Building a baseline dummy model
+
+Let me know — would you like me to generate a BRD, MoM, process flow, Excel mapping sheet, or stakeholder questionnaire next?
+
+
+
+
+
+
+
+You said:
+or shall i ask if some one can walk through us from these process flow because attribute label information i ma not able to get for building the model either table data or pdf,image,email
+
+
+ChatGPT said:
+Yes, you're absolutely right — and asking for a walkthrough of the process flow is the most professional and effective step at this point.
+
+Here’s how you can politely and clearly ask your stakeholder:
+
+📩 Professional Email/Message Template: Request for Process Flow Walkthrough
+Subject: Request for Process Flow Walkthrough & Clarification on Data Labeling
+
+Dear [Stakeholder’s Name],
+
+Following our recent discussions, I’ve started reviewing the internal tables and the document-based data (PDFs, images, emails) stored in ImageRight. However, to ensure we can build a reliable predictive model, I’m finding it difficult to identify:
+
+The attributes (features) relevant for modeling,
+
+The label logic for determining whether a claim is settled or goes to trial,
+
+And how these data points are mapped across structured tables and unstructured documents.
+
+Would it be possible to schedule a walkthrough of the current claim intake and evaluation process flow, ideally with someone who is familiar with:
+
+How information is captured across different sources (emails, PDFs, verdict forms),
+
+What internal rules or fields are used for assigning trial/settlement flags,
+
+And whether there is a standard document structure (template) used for different claim types.
+
+This would really help us align our data understanding with the business process and ensure the modeling logic is valid and traceable.
+
+Looking forward to your guidance on this.
