@@ -1,0 +1,144 @@
+Project: Reinsurance Treaty Reconciliation & Financial Integration
+Client: [Client Name]
+Prepared By: [Your Name]
+Date: [Insert Final Date of Meeting]
+Meetings Covered: Initial Stakeholder Sync, Weekly Working Sessions, Daily Deep Dives
+
+
+1. Objectives Discussed
+Build an automated, centralized system for treaty-level financial reconciliation.
+
+Integrate multiple source systems (Velocity, Oasis, WAC, Actuarial Excel, Reinsurance Cube).
+
+Enable daily or monthly policy and claim-level visibility into ceded loss and financial postings.
+
+Implement exception handling and root cause tracking to replace current Excel/email-based workflows.
+
+Support financial closure timelines and align with quarterly treaty reinsurance reports.
+
+2. Key Systems & Data Sources
+System	Description
+Velocity	Core policy, claim, and transaction system
+Oasis (MPLS ERP)	General Ledger, policy financial mappings
+WAC	Workers' Compensation data source
+IBNR (Actuarial)	Segment/state-level reserves; shared via Excel
+Reinsurance Cube	Stores treaty configuration: retention, share %, eligibility
+Salesforce / Workday	Used by accounting teams for validations and approvals
+
+3. Functional Areas Covered
+🔄 Reconciliation Process (Current State)
+Manual using Excel across multiple teams.
+
+Data pulled from Workday, Salesforce, Velocity monthly.
+
+Reconciliation efforts are slow, siloed, and lack traceability.
+
+No proper audit trail or exception management exists.
+
+Data Integration
+Monthly ingestion from third-party claim systems into EDW.
+
+No current daily-level integration for claims or financial data.
+
+Velocity and Oasis need to be source-of-truth for calculations and GL posting.
+
+Treaty Calculation
+Every treaty has distinct logic (e.g., cede %, attachment point, retention).
+
+~10–12 treaties signed per year.
+
+Need parameterization and version control for each treaty’s logic.
+
+New treaties signed at year-end must be calculated in Q1 of the next year.
+
+Treaties applied at policy/claim/hospital/provider level.
+
+Exception Management
+Needed to track:
+
+Eligibility mismatches (wrong LOB/state)
+
+Missing fields
+
+Invalid configurations
+
+Must support:
+
+Status (Open/In Progress/Resolved)
+
+Reason codes
+
+Owner assignments
+
+UI or reporting dashboard
+
+🧾 Adjustments & Financial Closure
+Adjustments (e.g., broker) still captured in Velocity before GL posting.
+
+Closure timeline:
+
+12-day closure window
+
+5–7 day buffer before reinsurance reports
+
+Adjustments must be tracked and applied before posting to ledger.
+
+📊 Reporting & Governance
+Reports needed:
+
+Loss Summary
+
+Ceded Loss Calculation
+
+Exception Log
+
+Treaty Run Audit Trail
+
+Closure Status
+
+Reports drive:
+
+Management decisions
+
+GL reconciliation
+
+Quarterly treaty reporting
+
+4. Challenges Identified
+Current Excel-based process is inefficient and error-prone.
+
+No centralized tool for multi-source matching.
+
+Delay in root cause identification.
+
+Adjustments not tracked consistently.
+
+Cession logic hardcoded and lacks reusability.
+
+No versioning of treaty scripts or logic.
+
+IBNR shared in Excel with no auto integration.
+
+5. Key Action Items
+Task	Owner	Status
+Share sample Excel reconciliation file	Finance	✅ Done
+Confirm IBNR file structure	Actuarial	🔄 Pending
+Share stakeholder list for attribute-level mapping	Client	✅ Shared
+Provide SQL/views for Oasis + Velocity data	Data Engineering	🔄 In Progress
+Document adjustment flow and mapping to ledger	Finance Ops	🔄 Pending
+Provide list of treaty parameters + 2-year treaty catalog	Reinsurance	🔄 Pending
+Create prototype for exception management	IT/Data	🔄 In Progress
+Loss script & source table documentation	Reporting/IT	🔄 Pending
+
+6. Next Steps
+Consolidate treaty logic into a parameter-driven config file
+
+Finalize data flow design from source to ledger
+
+Begin documentation of functional requirements
+
+Schedule session to review closure timelines and dependencies
+
+Review existing loss summary and adjustment scripts
+
+Discuss feasibility of daily reconciliation and reporting
