@@ -95,7 +95,7 @@ Regression (i.e., payment amount).
 “Which field in the structured data reflects the actual indemnity payment amount or settlement amount?”
 
 “Should we use Plaintiff Demand as the target for the amount model, or is there another field that reflects the final paid amount?”
-
+Many of the attributes appear to originate from unstructured documents. Is there a field-document mapping or an extracted version of those fields?
 ###
 As I reviewed the attribute list and supporting documentation, I had a few clarifying questions before proceeding with modeling:
 
