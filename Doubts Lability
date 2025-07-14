@@ -77,3 +77,45 @@ And whether there is a standard document structure (template) used for different
 This would really help us align our data understanding with the business process and ensure the modeling logic is valid and traceable.
 
 Looking forward to your guidance on this.
+
+##################333
+Questions:
+from the structured attribute list, I can only identify fields like plaintiff demand, but I am unclear which attributes correspond to actual payment made or propensity to pay.
+
+I would appreciate help identifying which features represent target variables for:
+
+Binary classification (i.e., payment made or not), and
+
+Regression (i.e., payment amount).
+
+
+ 1. Clarifying the Target Fields
+“Which field in the data should we use to define whether a payment has been made or not — for building the propensity model?”
+
+“Which field in the structured data reflects the actual indemnity payment amount or settlement amount?”
+
+“Should we use Plaintiff Demand as the target for the amount model, or is there another field that reflects the final paid amount?”
+
+###
+As I reviewed the attribute list and supporting documentation, I had a few clarifying questions before proceeding with modeling:
+
+Could you help identify which fields are to be used as targets for:
+
+Propensity to pay (Yes/No)
+
+Payment amount (regression)?
+
+Are there other fields beyond plaintiff demand that indicate actual payment made to the claimant?
+
+#$$$$$
+libililty:
+I’ve reviewed the dataset that was recently shared, and I’d like to confirm my understanding regarding the target fields for the two key modeling objectives:
+
+Verdict Propensity (Classification Model)
+Based on the field verdict_flag (0/1), I assume this represents whether a jury verdict occurred or not, and would be used as the classification target to estimate the likelihood (propensity) of a case going to verdict.
+
+Payout Prediction (Regression Model)
+For payout modeling, I assume verdict_amount represents the amount awarded if the case goes to verdict, and this field would serve as the target for the payout prediction model.
+
+Could you kindly confirm if this understanding is correct?
+Also, please let me know if there are any additional fields you would like us to consider for either the classification or regression
