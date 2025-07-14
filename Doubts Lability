@@ -119,3 +119,20 @@ For payout modeling, I assume verdict_amount represents the amount awarded if th
 
 Could you kindly confirm if this understanding is correct?
 Also, please let me know if there are any additional fields you would like us to consider for either the classification or regression
+:
+
+Based on your experience with the claims and litigation process, could you please help us identify or prioritize the most important features or factors that you’ve seen typically drive claim costs, litigation propensity, or settlement amounts?
+
+#####
+
+Thank you for sharing the sample attributes and supporting documents (e.g., demand letters, committee reviews, and other PDFs). As I begin reviewing these files, I’d appreciate your guidance on one clarification:
+
+Some of the extracted attributes appear to originate from unstructured sources, but it's currently unclear which specific document or document section they are derived from.
+
+To move forward effectively, could you please help us understand the following:
+
+For each of the 5–6 sample attributes shared, could you indicate:
+
+The document type (e.g., demand letter, medical review, committee evaluation) they are typically extracted from?
+
+If possible, the section or content area within that document where this information is usually located?
