@@ -1,0 +1,63 @@
+Functional Requirements – Claims Data Centralization and Reporting
+1. Data Ingestion
+Ingest data from multiple systems (e.g., Policy, Claim, Finance, Reinsurance).
+
+Identify which system provides which type of data (policy-level, claim-level).
+
+Allow new data sources to be added easily.
+
+2. Document Extraction (ImageRight PDFs)
+Extract fields from PDF documents like invoices, loss notices.
+
+Link each field to the PDF it came from.
+
+Maintain a mapping table for traceability.
+
+3. Data Transformation
+Standardize formats like dates, currency, status codes across sources.
+
+Apply rules to calculate premium, claim, deductible amounts.
+
+Allow logic to be applied after data is centralized.
+
+Support yearly treaty logic (10–12 new treaties per year) through configuration.
+
+4. Currency Conversion and Rounding
+Convert currencies using exchange rate tables.
+
+Handle rounding differences and log mismatches.
+
+Skip conversion if broker already provided final values.
+
+5. Reconciliation
+Match policy premium with actual financial transactions.
+
+Match system data with broker data and flag differences.
+
+Log any mismatches with time, source, and details.
+
+6. Modeling Features
+Identify target variable (e.g., claim paid or not) for ML models.
+
+Prepare dataset for modeling (e.g., payment propensity).
+
+Export model-ready data for data science teams.
+
+7. Reporting and Dashboards
+Create dashboards for claim trends, premium earned/unearned, treaty performance.
+
+Support filters by line of business, geography, policyholder, etc.
+
+8. Audit and Governance
+Track every transformation applied to data.
+
+Keep logs of rule version, who made changes, and when.
+
+Ensure data is traceable from source to final output.
+
+9. Treaty Configuration
+Support different types of reinsurance treaties.
+
+Store start/end date, deductible, retention, payout rules per treaty.
+
+Load new treaty data each year and rerun calculations if needed.
