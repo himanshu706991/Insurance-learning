@@ -61,3 +61,93 @@ Support different types of reinsurance treaties.
 Store start/end date, deductible, retention, payout rules per treaty.
 
 Load new treaty data each year and rerun calculations if needed.
+
+$$$$$
+Subject: Review of Client Inputs – Exposure & Experience Premium Logic & Data Structure
+Hi [Project Manager's Name],
+
+We hope you're doing well.
+
+We have reviewed the latest document and information shared by the client regarding the exposure and experience premium pricing model. Below is a consolidated summary of our understanding, key observations, and areas where further clarification is needed to support the development process.
+
+Overview of What Has Been Shared
+The document shared by the client is structured into three main sections:
+
+Page 1: Table & Attribute Mapping
+This section lists the source tables and corresponding attributes intended for use in the premium calculation.
+
+During our review, we observed:
+
+Some attribute names mentioned do not exactly match those in the provided SQL tables.
+
+It is unclear whether the missing attributes are renamed versions, derived fields, or exist in related tables.
+
+Clarification is needed to confirm if all fields referenced in the calculation logic are available in the current datasets.
+
+Page 2: Discounts and Other Inputs
+This section covers discount/surcharge rules and refers to specific tables and attributes.
+
+We noted that:
+
+A few attributes are mentioned that are not present in the specified tables.
+
+Several fields are marked as manually entered or sourced from Excel, but it’s not clear whether:
+
+These inputs are required for exposure premium calculations.
+
+They serve as temporary placeholders or are part of a manual override process.
+
+It would be helpful to understand the logic or business reasoning behind these manually entered values.
+
+Page 3: Exposure Premium Calculation (Excel-Based)
+This section includes the full logic for exposure premium, implemented entirely using Excel formulas.
+
+The logic appears to be complex, with multiple layered calculations.
+
+Since the source data resides in SQL and our implementation is planned using SQL/Python, we recommend that this logic be shared in SQL format or as structured pseudocode.
+
+This is particularly important because:
+
+Translating complex Excel logic to SQL without sufficient clarity can introduce misinterpretation or errors.
+
+The exposure premium is a critical target, and misalignment between logic and data can impact model accuracy.
+
+A SQL-based version will ensure better traceability, reproducibility, and validation.
+
+Additional Observations Based on Previous Discussions
+The source tables are currently being populated through Excel uploads. However:
+
+We have not received any documentation or SQL logic showing how these Excel files are ingested into the tables.
+
+It remains unclear how the Excel columns are mapped to table fields and whether any transformation or validation steps are performed.
+
+Experience premium logic has not been shared yet. When available, we recommend it also be shared in SQL or structured form.
+
+For unstructured data (from ImageRight), we are still waiting for:
+
+A complete list of attributes being extracted.
+
+Clarification on where those extracted fields are being stored for downstream usage.
+
+Note on Target Variables
+As of now, the exposure premium and experience premium are the two confirmed target variables for modeling.
+However, we understand that additional targets may be introduced in the future, as this remains an ongoing discussion with stakeholders. We will keep this in mind and remain flexible in our implementation plan to accommodate further requirements.
+
+Summary of Follow-Up Needs from the Client
+To enable smooth development and integration, the following clarifications are required:
+
+SQL logic or ETL transformation steps for ingesting Excel data into the source tables.
+
+Clarification on unmatched or missing fields referenced in pages 1 and 2.
+
+A SQL-based version (or structured pseudocode) of the exposure premium logic.
+
+Experience premium calculation logic (once available), preferably in SQL.
+
+Attribute list for ImageRight (unstructured data) and confirmation of storage destination.
+
+Confirmation on whether additional target metrics are expected, and how they may be defined.
+
+Please let us know if you’d like us to send a follow-up to the client with these points, or if you prefer to wait for the next round of inputs. We’re happy to assist further as needed.
+
+Best regards,
