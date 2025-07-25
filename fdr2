@@ -151,3 +151,64 @@ Confirmation on whether additional target metrics are expected, and how they may
 Please let us know if you’d like us to send a follow-up to the client with these points, or if you prefer to wait for the next round of inputs. We’re happy to assist further as needed.
 
 Best regards,
+##########3
+One critical point we would like to highlight is the need for clarity on the physician-level entity for whom the premiums and related calculations are being derived.
+
+Since the exposure and experience premium logic is ultimately applied at the physician level, we assume there must be a structured way to identify and profile each physician, typically via the NPI (National Provider Identifier) or similar unique ID.
+
+However, based on the current documentation and shared tables, it is not yet clear:
+
+Which table(s) contain the physician-level records.
+
+Whether NPI or another identifier is being used as the primary key.
+
+How other datasets (e.g., claims, endorsements, submissions, discounts) are being linked back to individual physicians.
+
+To move forward effectively with modeling and ensure proper target association, we request:
+
+Confirmation of the physician reference/master table.
+
+Schema and sample structure of this table.
+
+Details on how all incoming data will be joined at the physician level using NPI or another consistent identifier.
+
+This will help ensure that all predictions and premium calculations are properly aligned and interpretable at the physician granularity level.
+
+####
+We have received several premium-related factors such as:
+
+Base Rate
+
+Class Factor
+
+Claim-Made Factor
+
+Claim-Made Year
+
+One-Year Adjustment Factor
+
+Limit Factor
+
+Class Layer Factor
+
+Layer 3 ILF Factor
+
+Charity Factor
+
+Expense Factor
+
+While we understand these are used in the exposure premium calculation, it would be extremely helpful to have a business-level explanation or definition of each of these terms.
+
+Specifically, we would like to understand:
+
+What each factor represents in the context of physician pricing or underwriting.
+
+How they influence or adjust the final premium.
+
+Whether any of these are standardized across the industry or specific to this product/organization.
+
+If there are any rules, ranges, or constraints associated with these fields.
+
+How these factors interact with other variables (e.g., physician specialty, limit, region).
+
+Having this clarity will not only ensure proper model integration but also help us build transparent and explainable logic that aligns with business expectations.
