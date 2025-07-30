@@ -211,4 +211,54 @@ If there are any rules, ranges, or constraints associated with these fields.
 
 How these factors interact with other variables (e.g., physician specialty, limit, region).
 
+$$$$$$$$$$$$$$$$$$$$$$$
+Meeting Agenda / Stakeholder Questions
+1. Source Understanding for QlikView Report
+Can you help us identify the exact data source for the QlikView report?
+
+Which SQL tables or views are being used to generate this report?
+
+Are there any intermediate transformation layers (ETL scripts, joins, filters) between the source and the QlikView report?
+
+Can we get access to the underlying logic or transformation rules (e.g., stored procedures or QlikView load script)?
+
+Is there any documentation or data lineage available for this report?
+
+2. Document Understanding from ImageRight System
+From ImageRight, we are receiving multiple types of claim documents — do we have a defined template or document type classification for these?
+
+For different injury types, do we need to extract different sets of attributes? If yes, can you share any sample mappings or templates?
+
+Attributes like rating (e.g., 1–5) — what do these numbers represent? Are they manual inputs or derived fields?
+
+Are there any data extraction guidelines or heuristics available (e.g., keyword-based or section-based parsing)?
+
+Is there any OCR or NLP system already in place for parsing these documents?
+
+3. Modeling and Data Preparation
+For the model execution, is it expected to run daily on new claims only, or should it also re-evaluate older claims with updates?
+
+Do we already have a labeling logic or criteria for:
+
+Whether the case went to trial
+
+Whether it was won by plaintiff or defendant
+
+Can we get the disposition code mapping and what each code means in business terms?
+
+Are PSL / HSL fields directly available or derived from other fields?
+
+4. Additional Operational and System-Level Questions
+Can we get sample dummy data or a sandbox environment for development and testing?
+
+Are there any data quality issues or known gaps in current fields?
+
+Who are the point-of-contact owners for:
+
+QlikView report logic
+
+Claims document classification
+
+Final approval or validation of model outputs?
+
 Having this clarity will not only ensure proper model integration but also help us build transparent and explainable logic that aligns with business expectations.
