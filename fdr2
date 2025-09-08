@@ -712,3 +712,59 @@ Should Snowflake tables already include the calculated output fields after apply
 Understanding this will help define the data pipeline, what needs to be automated in SQL/Snowflake, and what will remain in Excel.
 
 If you want, I can update your full summary email and include this as a clear point under Open Considerations for Modeling so your PM sees this as a key clarification for tomorrow’s discussion.
+
+
+#################3
+I am providing a consolidated update on the underwriting use case based on our recent discussions and current progress.
+
+1. Input Data and Calculations
+
+As aligned earlier, we will not perform any calculations at this stage.
+
+All input files (ASRA, T-Factors, Cognisure submission data, DHC data, internal system data, etc.) are being consumed directly into Snowflake as-is, including calculated fields (exposure premium, experience premium, etc.) already present in the Excel sheets.
+
+Since ingestion is happening without additional transformation or recalculation, a separate field-level mapping document is no longer required.
+
+2. Risk-Loss Process & NPI Rating
+
+The client has already shared detailed SQL queries and documentation (70+ pages each) for:
+
+Risk-Loss process calculations
+
+NPI scoring logic
+
+The ETL team is currently reviewing and implementing these queries into Snowflake/Pentaho workflows.
+
+If additional clarification is needed regarding the logic or attribute usage within these queries, the ETL team will raise it, and we will jointly align with the client.
+
+3. Requirement for Modeling
+
+For the modeling phase (Exposure Premium, Experience Premium, and Underwriting Model Factor by NPI and Year), our primary requirement is the final attribute set that will be used at:
+
+Physician level
+
+Organization level
+
+To clarify:
+
+We are not requesting the source files or sheets (ASRA, DHC, etc.) again.
+
+Instead, we are requesting a consolidated list of attributes that should be considered for model development.
+
+This list will serve as the foundation for feature engineering, model design, and integration with actuarial/underwriting expectations.
+
+4. Next Steps
+
+Continue ingestion of all client-provided files into Snowflake without additional calculation.
+
+ETL team to proceed with implementation of Risk-Loss and NPI SQL logic.
+
+Client to confirm and provide the final modeling attribute set for physician-level and organization-level modeling.
+
+In summary:
+
+All data ingestion is happening “as-is,” with no calculations performed by us at this stage.
+
+Risk-Loss and NPI queries are being handled by the ETL team, based on client-provided SQL logic.
+
+Our key dependency is the final attribute list for modeling, which remains outstanding and is required for us to proceed effectively.
