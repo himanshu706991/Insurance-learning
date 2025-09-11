@@ -768,3 +768,17 @@ All data ingestion is happening “as-is,” with no calculations performed by u
 Risk-Loss and NPI queries are being handled by the ETL team, based on client-provided SQL logic.
 
 Our key dependency is the final attribute list for modeling, which remains outstanding and is required for us to proceed effectively.
+
+$$$$$$$$$$
+
+Dear [Client Name],
+
+As part of the data ingestion design, we have completed the mapping of fields from the provided Excel sheet to the input sources outlined in the architecture diagram (ASRA tables, Cognizant, industry studies, external data, etc.). Most mappings have been validated; however, for a few specific fields (particularly those related to NPI and industry references), we have made the best possible alignment based on the available information.
+
+To proceed further without delay, we kindly request your confirmation and sign-off on the attached mapping document. This will ensure alignment on the data sources and avoid any rework during later stages.
+
+Please review at your convenience and confirm if the mappings are acceptable, or advise if any adjustments are required. Once we have your sign-off, we will proceed with development accordingly.
+
+Thank you for your support.
+
+Best regards,
